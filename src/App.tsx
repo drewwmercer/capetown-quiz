@@ -50,19 +50,23 @@ const App = () => {
           Start
         </button>
       ) : null}
-      <p className='score'>Score: </p>
-      <p>Loading questions...</p>
-      {/* <QuestionCard 
-        questionNum={number + 1}
-        totalQuestions={TOTAL_QUESTIONS}
-        question={questions[number].question}
-        answers={questions[number].answers}
-        userAnswer={userAnswers ? userAnswers[number] : undefined}
-        callback={checkAnswer}
-      /> */}
+      {!gameOver ? <p className='score'>Score: </p> : null}
+      {loading && <p>Loading questions...</p>}
+      {!loading && !gameOver && (
+        <QuestionCard
+          questionNum={number + 1}
+          totalQuestions={TOTAL_QUESTIONS}
+          question={questions[number].question}
+          answers={questions[number].answers}
+          userAnswer={userAnswers ? userAnswers[number] : undefined}
+          callback={checkAnswer}
+        />
+      )}
+      {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS -1 ? (
       <button className='next' onClick={nextQuestion}>
         Next
       </button>
+      ) : null}
     </div>
   );
 };
