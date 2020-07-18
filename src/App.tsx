@@ -8,7 +8,7 @@ import { QuestionState, Difficulty } from './API';
 type AnswerObject = {
   question: string;
   answer: string;
-  correct: boolean;
+  isCorrect: boolean;
   correctAnswer: string;
 };
 
@@ -38,7 +38,26 @@ const App = () => {
     setLoading(false);
   };
 
-  const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {};
+  const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
+if(!gameOver) {
+// User's answer
+const answer = e.currentTarget.value;
+// Check answer against correct answer
+const isCorrect = questions[number].correct_answer === answer;
+// Add to total score if answer is correct
+if (isCorrect) setScore(prev => prev + 1);
+// Save answer in the array for user's answers
+const answerObject = {
+  question: questions[number].question,
+  answer,
+  isCorrect,
+  correctAnswer: questions[number].correct_answer,
+};
+setUserAnswers(prev => [...prev, answerObject])
+
+}
+
+  };
 
   const nextQuestion = () => {};
 
