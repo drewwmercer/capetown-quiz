@@ -1,5 +1,4 @@
 import { shuffleArray } from './utils';
-import QuestionCard from './components/QuestionCard';
 
 export type Question = {
     category: string;
