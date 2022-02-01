@@ -76,7 +76,7 @@ const App = () => {
         <h1>Cape Town Quiz</h1>
         {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
           <button className='start' onClick={startQuiz}>
-            Start
+            New Game
           </button>
         ) : null}
         {!gameOver ? <p className='score'>Score: {score}</p> : null}
