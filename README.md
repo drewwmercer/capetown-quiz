@@ -12,8 +12,9 @@ Test your knowledge by taking this quiz live at: [polar-refuge-71762.herokuapp.c
 
 ## Implementation
 - Developed & tested locally using Visual Studio Code (CLI GitHub and Heroku deployment)
- - `npm install`
- - `npm start`
- - `access [localhost:3000](http://localhost:3000/)`
+  - To develop and test locally: 
+    - `npm install`
+    - `npm start`
+    - Access [localhost:3000](http://localhost:3000/)
 - Hosted on a Free Dyno thanks to [Heroku](https://www.heroku.com/)  
   - **Note:** This app is deployed on a free Heroku dyno. Free dynos will sleep after a half hour of inactivity (if they don’t receive any traffic). This causes a delay of a few seconds for the first request upon waking. Subsequent requests will perform normally.
